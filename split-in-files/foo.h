@@ -1,2 +1,4 @@
-#include "bar.h"
+#ifndef fooh
+#define fooh
 int foo(int);
+#endif

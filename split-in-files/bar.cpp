@@ -1,5 +1,6 @@
 #include "bar.h"
-char bar(double, double)
+#include "foo.h"
+char bar(double x, double y)
 {
     foo(1);
 

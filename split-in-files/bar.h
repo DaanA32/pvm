@@ -1,4 +1,4 @@
-#include "foo.h"
-namespace{
-    int bar(int, int);
-}
+#ifndef barh
+#define barh
+char bar(double, double);
+#endif
