@@ -8,7 +8,12 @@
 */
 unsigned length(linked_list* lst)
 {
-    
+    unsigned count = 0;
+    while(lst != nullptr){
+      lst = lst->next;
+      ++count;
+    }
+    return count;
 }
 
 /*
@@ -19,7 +24,35 @@ unsigned length(linked_list* lst)
 */
 linked_list* penultimate(linked_list* lst)
 {
-    
+  if(lst == nullptr){
+    return nullptr;
+  }
+  linked_list* first = lst;
+  linked_list* previous = nullptr;
+  while(lst->next != nullptr){
+    previous = lst;
+    lst = lst->next;
+  }
+  if(first == lst){
+    return nullptr;
+  }
+  return previous;
+}
+
+
+linked_list* last(linked_list* lst)
+{
+    linked_list* first = lst;
+    if(lst->next == nullptr){
+      return lst;
+    }
+    while(lst->next != nullptr){
+      lst = lst->next;
+    }
+    if(first == lst){
+      return nullptr;
+    }
+    return lst;
 }
 
 /*
@@ -32,7 +65,22 @@ linked_list* penultimate(linked_list* lst)
 */
 linked_list* longest(linked_list* xs, linked_list* ys)
 {
-    
+  if(xs == nullptr){
+    return ys == nullptr ? nullptr : ys;
+  }else if(ys == nullptr){
+    return xs == nullptr ? nullptr : xs;
+  }
+  linked_list* x = xs;
+  linked_list* y = ys;
+  while( xs != nullptr && ys != nullptr){
+    xs = xs->next;
+    ys = ys->next;
+  }
+  if(xs == nullptr){
+    return ys == nullptr ? nullptr : y;
+  }else if(ys == nullptr){
+    return xs == nullptr ? nullptr : x;
+  }
 }
 
 /*
@@ -42,7 +90,8 @@ linked_list* longest(linked_list* xs, linked_list* ys)
 */
 void make_cyclic(linked_list* lst)
 {
-    
+    linked_list* last_item = last(lst);
+    last_item->next = lst;
 }
 
 /*
@@ -55,5 +104,31 @@ void make_cyclic(linked_list* lst)
 */
 bool has_cycle(linked_list* lst)
 {
-    
+  if(lst == nullptr || lst->next == nullptr){
+    return false;
+  }
+  linked_list* tort = lst->next;
+  if(lst == tort){
+    return true;
+  }else if(tort->next == nullptr){
+    return false;
+  }
+  linked_list* hare = lst->next->next;
+  if(lst == hare || tort == hare){
+    return true;
+  }
+  while(tort != hare){
+    if(hare->next == nullptr){
+      return false;
+    }
+    hare = hare->next;
+    if(hare->next == nullptr){
+      return false;
+    }
+    hare = hare->next;
+    tort = tort->next;
+  }
+  if(tort == hare && tort->next != nullptr){
+    return true;
+  }
 }

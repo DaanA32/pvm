@@ -1,5 +1,10 @@
 #include <iostream>
 
+unsigned next_unsigned();
+bool is_prime(unsigned);
+bool is_divisible_by(unsigned, unsigned);
+unsigned sqr(unsigned);
+
 int main()
 {
     std::cout << "Enter a value: ";

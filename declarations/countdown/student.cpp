@@ -1,4 +1,7 @@
+#include <iostream>
 void countdown(int from)
 {
-    // TODO
+    while(from >= 1){
+        std::cout << from-- << std::endl;
+    }
 }
