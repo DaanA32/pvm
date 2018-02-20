@@ -57,7 +57,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "D:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.12.25827/include",
+                "D:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.12.25827\\include\\*",
                 "${workspaceRoot}"
             ],
             "defines": [
@@ -67,7 +67,7 @@
             "intelliSenseMode": "msvc-x64",
             "browse": {
                 "path": [
-                    "D:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.12.25827/include*",
+                    "D:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.12.25827\\include\\*",
                     "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
